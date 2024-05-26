@@ -1,4 +1,6 @@
-yakpro-po \
+rm -r temp
+
+yakpro-po minimal -o temp \
 --no-strip-indentation \
 --no-shuffle-statements \
 --no-obfuscate-string-literal \
@@ -14,7 +16,6 @@ yakpro-po \
 --no-obfuscate-property-name \
 --no-obfuscate-method-name \
 --no-obfuscate-namespace-name \
---no-obfuscate-label-name \
-minimal -o temp
+--no-obfuscate-label-name
 
 sudo rm -r /var/www/html/* ; sudo cp -r temp/yakpro-po/obfuscated/* /var/www/html/
